@@ -2,6 +2,7 @@ package helper
 
 import (
 	"fmt"
+	"runtime"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -51,6 +52,14 @@ func TestHelloWorldRequire(t *testing.T) {
 	result := HelloWorld("Dita")
 	require.Equal(t, "Hello Dita", result, "Result must be 'Hello Dita'")
 	fmt.Println("TestHelloWorldRequire with Require done")
+}
+
+func TestSkip(t *testing.T) {
+	if runtime.GOOS == "darwin" {
+		t.Skip("Can not run on Mac OS")
+	}
+	result := HelloWorld("Eko")
+	assert.Equal(t, "Hello Eko", result, "Result must be 'Hello Eko'")
 }
 
 // Cara 1 (nama function test-nya tidak ditampilkan)
