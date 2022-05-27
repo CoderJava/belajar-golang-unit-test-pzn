@@ -3,6 +3,9 @@ package helper
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestHelloWorldYudi(t *testing.T) {
@@ -36,6 +39,18 @@ func TestHelloWorldSetiawan(t *testing.T) {
 	}
 
 	fmt.Println("TestHelloWorldSetiawan done")
+}
+
+func TestHelloWorldAssert(t *testing.T) {
+	result := HelloWorld("Yudi Setiawan")
+	assert.Equal(t, "Hello Yudi Setiawan", result, "Result must be 'Hello Yudi Setiawan'")
+	fmt.Println("TestHelloWorld with Assert done")
+}
+
+func TestHelloWorldRequire(t *testing.T) {
+	result := HelloWorld("Dita")
+	require.Equal(t, "Hello Dita", result, "Result must be 'Hello Dita'")
+	fmt.Println("TestHelloWorldRequire with Require done")
 }
 
 // Cara 1 (nama function test-nya tidak ditampilkan)
