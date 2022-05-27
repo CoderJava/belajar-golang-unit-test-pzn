@@ -1,21 +1,41 @@
 package helper
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
-func TestHelloWorld(t *testing.T) {
+func TestHelloWorldYudi(t *testing.T) {
 	result := HelloWorld("Yudi")
 	if result != "Hello Yudi" {
 		// error
-		panic("Result is not 'Hello Yudi'")
+		// t.Fail()
+		t.Error("Result must be 'Hello Yudi'")
 	}
+
+	fmt.Println("TestHelloWorldYudi done")
 }
 
 func TestHelloWorldPablo(t *testing.T) {
 	result := HelloWorld("Pablo")
 	if result != "Hello Pablo" {
 		// error
-		panic("Result is not 'Hello Pablo'")
+		// t.FailNow()
+		t.Fatal("Result must be 'Hello Pablo'")
 	}
+
+	fmt.Println("TestHelloWorldPablo done")
+}
+
+func TestHelloWorldSetiawan(t *testing.T) {
+	result := HelloWorld("Setiawan")
+	if result != "Hello Setiawan" {
+		// error
+		// t.Fail()
+		t.Error("Result must be 'Hello Setiawan'")
+	}
+
+	fmt.Println("TestHelloWorldSetiawan done")
 }
 
 // Cara 1 (nama function test-nya tidak ditampilkan)
