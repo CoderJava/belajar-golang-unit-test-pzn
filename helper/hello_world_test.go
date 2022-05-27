@@ -72,6 +72,18 @@ func TestSkip(t *testing.T) {
 	assert.Equal(t, "Hello Eko", result, "Result must be 'Hello Eko'")
 }
 
+func TestSubTest(t *testing.T) {
+	t.Run("Eko", func(t *testing.T) {
+		result := HelloWorld("Eko")
+		assert.Equal(t, "Hello Eko", result, "Result must be 'Hello Eko'")
+	})
+
+	t.Run("Kurniawan", func(t *testing.T) {
+		result := HelloWorld("Kurniawan")
+		assert.Equal(t, "Hello Kurniawan", result, "Result must be 'Hello Kurniawan'")
+	})
+}
+
 // Cara 1 (nama function test-nya tidak ditampilkan)
 // cd helper
 // go test
