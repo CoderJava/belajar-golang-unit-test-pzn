@@ -9,6 +9,18 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func BenchmarkHelloWorldYudi(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Yudi")
+	}
+}
+
+func BenchmarkHelloWorldKurniawan(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		HelloWorld("Kurniawan")
+	}
+}
+
 func TestMain(m *testing.M) {
 	// before
 	fmt.Println("BEFORE UNIT TEST")
